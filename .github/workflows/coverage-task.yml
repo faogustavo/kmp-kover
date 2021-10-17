@@ -40,7 +40,7 @@ jobs:
           script: ./gradlew :androidApp:connectedCheck
 
       - name: iOS - Run Tests
-        run: xcodebuild -scheme iosApp -workspace iosApp/iosApp.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=15.0' build test
+        run: xcodebuild -scheme iosApp -workspace iosApp/iosApp.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=14.4' build test
 
       - name: Coverage
         run: bash <(curl -s https://codecov.io/bash)
