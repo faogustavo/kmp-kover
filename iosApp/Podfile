@@ -1,0 +1,10 @@
+target 'iosApp' do
+  use_frameworks!
+  platform :ios, '14.1'
+  pod 'shared', :path => '../shared'
+
+   target 'iosAppTests' do
+    inherit! :complete
+    pod 'SnapshotTesting', '~> 1.9.0'
+  end
+end
