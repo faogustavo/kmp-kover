@@ -30,14 +30,14 @@ jobs:
         run: ./gradlew clean build -x check
         ## Excluding the check task to build faster
 
-#      - name: Android - Run Unit Tests # And linter
-#        run: ./gradlew check
-#
-#      - name: Android - Run Instrumented Tests
-#        uses: reactivecircus/android-emulator-runner@v2
-#        with:
-#          api-level: 29
-#          script: ./gradlew :androidApp:connectedCheck
+      - name: Android - Run Unit Tests # And linter
+        run: ./gradlew check
+
+      - name: Android - Run Instrumented Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew :androidApp:connectedCheck
 
       - name: iOS - Run Tests
         run: |
