@@ -30,7 +30,7 @@ jobs:
         run: ./gradlew clean build -x check
         ## Excluding the check task to build faster
 
-      - name: Android - Run Unit Tests # And linter
+      - name: Android + Shared - Run Unit Tests # And linter
         run: ./gradlew check
 
       - name: Android - Run Instrumented Tests
