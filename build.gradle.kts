@@ -10,7 +10,12 @@ buildscript {
     }
 }
 
+plugins {
+    id("org.jetbrains.kotlinx.kover") version "0.3.0"
+}
+
 allprojects {
+    apply(plugin = "kover")
     repositories {
         google()
         mavenCentral()

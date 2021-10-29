@@ -4,7 +4,6 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("kotlinx-kover") version "0.3.0"
 }
 
 version = "1.0"
