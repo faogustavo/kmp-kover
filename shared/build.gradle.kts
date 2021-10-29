@@ -26,6 +26,10 @@ kotlin {
         ios.deploymentTarget = "14.1"
         frameworkName = "shared"
         podfile = project.file("../iosApp/Podfile")
+
+        // Compiling shared module as release for testing
+        xcodeConfigurationToNativeBuildType["Testing"] =
+            org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
     }
     
     sourceSets {

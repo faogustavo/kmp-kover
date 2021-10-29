@@ -180,6 +180,9 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework"
 fi
+if [[ "$CONFIGURATION" == "Testing" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
