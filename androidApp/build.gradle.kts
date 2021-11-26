@@ -25,12 +25,22 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         getByName("debug") {
             isTestCoverageEnabled = true
         }
         getByName("release") {
             isMinifyEnabled = false
+        }
+    }
+
+    testOptions {
+        unitTests.all {
+            it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+                isEnabled = true
+                binaryReportFile.set(file("$buildDir/kover/${it.name}/report.bin"))
+            }
         }
     }
 }

@@ -59,13 +59,3 @@ android {
         targetSdkVersion(31)
     }
 }
-
-afterEvaluate {
-    tasks.withType(Test::class).configureEach {
-        extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
-            generateHtml = true
-            xmlReportFile.set(file("$buildDir/kover/${name}/report.xml"))
-            excludes = listOf(".*BuildConfig.*")
-        }
-    }
-}
